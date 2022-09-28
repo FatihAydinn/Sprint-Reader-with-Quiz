@@ -15,7 +15,7 @@ function Question(questionTxt, questionOptions, questionCorrect) {
   let questions = [
       new Question("Rekorun eski sahibi kimdir?",{ A: "Tommy Edison", B: "Dr Amit Patel",C:"Mike Newman",D:"Metin Şentürk" },"C"),
       new Question("Rekorun kırıldığı yer?",{ A: "GAP Havaalanı", B: "Atatürk Havaalanı", C: "Adnan Menderes Havalimanı",D:"Ankara Esenboğa Havalimanı" },"A"),
-      new Question("Bahsi geçen rekorun kırıldığı yıl",{ A: "2011", B: "2010",C:"200",D:"2018" },"B"),
+      new Question("Bahsi geçen rekorun kırıldığı yıl",{ A: "2011", B: "2010",C:"2000",D:"2018" },"B"),
       new Question("Rekor hangi araç ile kırılmıştır?",{ A: "Ferrari 599XX", B: "Renault Clio",C:"Ferrari 812",D:"Ferrari F430" },"D"),
       new Question("Rekor sürüşü sırasında ulaşılan en yüksek hız?",{ A: "301.23", B: "298.89",C:"303.62",D:"292.89" },"C"),
     ];
