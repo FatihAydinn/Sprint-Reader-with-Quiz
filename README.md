@@ -1,4 +1,4 @@
-# Sprint-Reader with Quiz
+# Sprint Reader with Quiz
 ### Sprint Reader - Javascript
 
 Sabit bir hızla ilerleyen metni dikkatlice okuyup metin sonunda sorulara yanıt vermen gerek.
