@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>section {
+  margin: 25px auto;
+  padding: 20px;
+  max-width: 800px;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  box-sizing: border-box;
+  color: rgb(165, 165, 165);
+  font-family:'Courier New', Courier, monospace;
+}
+.customcontainer
+{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 200px ;
+  /* background-color: white; */
+  height: 450px;
+  text-align: center;
+  max-width: 800px;
+}
+        .mybutton1 {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 34.2px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  font-family:'Courier New', Courier, monospace;
+}
+.mybutton1::after {
+  content: "";
+  background-color: #91918e;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+.mybutton1:hover::after {
+  top: 0px;
+  left: 0px;
+}
+.slide {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  /* top: -265px; */
+  /* left: 26%; */
+  transform: translate(-50%,);
+  width: 300px;
+}
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+.slide div {
+  transition: transform 0.8s;
+}
+.slide:hover div {
+  transform: translateX(-6px);
+}
+.slide::after {
+  content: "";
+  background-color: #87b9f9;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+.quiz-box.active{
+opacity: 1;
+pointer-events: auto;
+}
+.quiz-box {
+transform: translate(-10%,-100%);
+}
+.quiz-box {
+  color: black;
+  opacity: 0;
+  pointer-events: none;
+}
+.quiz-box .card-header {
+  font-size: 28px;
+  background-color: transparent;
+  color: black;
+}
+.quiz-box .option_list {
+  padding: 18px 0px;
+}
+.quiz-box .option_list .option {
+  border: 3px solid grey;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 22px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-weight:400;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 540;
+}
+.quiz-box .option_list .option:hover
+{
+  background-color: black;
+  color: white;
+}
+.quiz-box .option_list .option.correct
+{
+  background-color: #86fbc7
+}.quiz-box .option_list .option.incorrect
+{
+  background-color: #ff5858
+}
+.quiz-box .option_list .option.disabled
+{
+  pointer-events: none;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently*/
+  color: black;
+  padding: 150px;
+  font-size: 70px;
+}
+.textbox
+{
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 25px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  /* cursor: pointer; */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  color: #0ac03e;
+}
+.textbox::after
+{
+  content: "";
+  background-color: #000000;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 20px;
+  left: 20px;
+  transition: 0.2s;
+}</style>
+</head>
+<body>
+    <section>
+    <div class="customcontainer" style="text-align: center">
+    <div class="noselect">
+    <div id="countdown" style="color: grey;"> ??? </div>
+  <div id="demo">???</div>
+  <br /><br /><br /><br /><br /><br />
+  <button id="btn-timer" class="mybutton1">Başla</button>
+      <button id="btn-start" class="mybutton1">Teste Başla</button>
+      <button id="btn-replay" class="mybutton1">Tekrar</button>
+      <button id="btn-stop" class="mybutton1">Dur</button>
+      <div class="card quiz-box" style="width:650px;">
+        <b class="card-header"></b>
+        <div class="card-body">
+      <div class="option_list">
+        <div class="option incorrect">
+          <div class="icon" style="color: red;"><i class="fas fa-times"></i></div></div>
+        <div class="option">
+          <div class="icon"style="color: red;"><i class="fas fa-times"></i></div></div>
+        <div class="option correct">
+          <div class="icon" style="color:rgb(1, 232, 1);"><i class="fas fa-check"></i></div></div></div></div>
+    <button type="button" id="btn-next" class="slide" style="text-align: center;">
+      <div>Sıradaki Soru</div>
+      <i class="icon-arrow-right"></i></button>
+      <button type="button" id="btn-reflesh" class="slide" style="text-align: center;">
+        <div>Başa Dön</div>
+        <i class="icon-arrow-right"></i></button>
+    <br></div></div>
+  <div class="textbox" style="height: 100px;">
+    <a href="https://zihninibosalt.net"> <img style="background-color: black;height: 100px;" src="zlogo.png" alt="#"></a></div>  
+    <br /><br /><br /></div>    
+</section>
+  <br><br>
+    <script src="script.js"></script>
+</body>
+</html>
