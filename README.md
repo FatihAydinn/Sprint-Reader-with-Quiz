@@ -10,4 +10,4 @@ Sabit bir hızla ilerleyen metni dikkatlice okuyup metin sonunda sorulara yanıt
 
 Web sitemi ziyaret etmeyi unutma!
 <hr>
-https://zihninibosalt.net
+https://www.zihninibosalt.net
